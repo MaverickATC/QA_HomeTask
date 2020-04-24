@@ -6,9 +6,9 @@ Title: search on github invalid string
 Go to https://github.com
 Add string "okmnji" to search
 Click on search with offset to fit search button
-Find h3 "We couldn’t find any repositories matching 'okmnji'" is displayed
+Find h3 "We couldn’t find any repositories matching 'okmnji'" 
 
-Expected result: If h3 found print "Search is correct"
+Expected result:h3 is displayed
 */
 /* TC #2
 Title: Check if click on Team button transfers to apropriate page
@@ -35,10 +35,10 @@ Go to https://github.com
 Scroll to input(id="user[login]-footer")
 Set value "MaverickATC" 
 Click "Sign up for GitHub" button
-Expected result: message "Username MaverickATC is not available" is displayed as true in console
+Expected result: message "Username MaverickATC is not available" is displayed
 */
 /* TC #5
-Title: Check if GithubIcon opens page in new tab correctle
+Title: Check if GithubIcon opens page in new tab correctly
 
 Go to https://github.com
 Scroll to a[href="https://github.com/github"]
@@ -57,10 +57,7 @@ describe('Hometask N4', () => {
         search.click({ y: 50 });
 
         const header = $('//div[@class="blankslate"]//h3')
-        if(header.getText() === "We couldn’t find any repositories matching 'okmnji'")
-        {
-            console.log("Search is correct");
-        }
+        header.isDisplayed();
     })
 
     it('TC2', () => {
@@ -95,7 +92,7 @@ describe('Hometask N4', () => {
 
         $('[data-ga-click="Signup, Attempt, location:teams;"]').click();
 
-        console.log($('//*[text()="Username is not available"]').isDisplayed());
+        ($('//*[text()="Username is not available"]').isDisplayed();
 
     })
 
